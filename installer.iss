@@ -44,16 +44,21 @@ Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChang
 function GetDefaultServerDir(Param: String): String;
 var
   DocsPath: String;
+  UserProf: String;
   OneDriveDocs: String;
 begin
   DocsPath := ExpandConstant('{userdocs}\BeamMP Server');
-  OneDriveDocs := ExpandConstant('{userprofile}\OneDrive\Documents\BeamMP Server');
+  UserProf := GetEnv('USERPROFILE');
+  if UserProf <> '' then
+    OneDriveDocs := UserProf + '\OneDrive\Documents\BeamMP Server'
+  else
+    OneDriveDocs := '';
 
-  if FileExists(OneDriveDocs + '\BeamMP-Server.exe') then
+  if (OneDriveDocs <> '') and FileExists(OneDriveDocs + '\BeamMP-Server.exe') then
     Result := OneDriveDocs
   else if FileExists(DocsPath + '\BeamMP-Server.exe') then
     Result := DocsPath
-  else if DirExists(OneDriveDocs) then
+  else if (OneDriveDocs <> '') and DirExists(OneDriveDocs) then
     Result := OneDriveDocs
   else if DirExists(DocsPath) then
     Result := DocsPath
