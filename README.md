@@ -19,9 +19,15 @@ A lightweight, native Windows desktop manager and configuration GUI for [BeamMP 
 
 ## Setup Instructions
 
-1. **Download** the latest `BeamMP-GUI.exe` from [Releases](https://github.com/alentrost/BeamMP-GUI/releases/latest).
-2. **Move** `BeamMP-GUI.exe` directly into your BeamMP server directory (the folder containing `BeamMP-Server.exe` and `ServerConfig.toml`).
-3. **Run** `BeamMP-GUI.exe`.
+### Option 1: Installer (Recommended)
+1. Download **`BeamMP-GUI-Installer.exe`** from [Releases](https://github.com/alentrost/BeamMP-GUI/releases/latest).
+2. Run it, choose your BeamMP server folder, and select your preferred shortcut options (**Desktop** and/or **Start Menu**).
+3. Click **Install & Launch**.
+
+### Option 2: Portable / Standalone
+1. Download **`BeamMP-GUI.exe`** from [Releases](https://github.com/alentrost/BeamMP-GUI/releases/latest).
+2. Drop `BeamMP-GUI.exe` directly into your BeamMP server folder (where `BeamMP-Server.exe` and `ServerConfig.toml` are located).
+3. Run `BeamMP-GUI.exe` (you can also click the `📌 Shortcuts` button in the header anytime to add Desktop or Start Menu shortcuts).
 
 > **Note:** Requires Windows 10 or 11 (.NET Framework 4.8 is built-in). No external runtimes (Python, Node, etc.) required.
 
@@ -29,6 +35,7 @@ A lightweight, native Windows desktop manager and configuration GUI for [BeamMP 
 
 ## Features
 
+- **Built-in Installer & Setup Wizard:** Choose your server folder, install the app, and generate Desktop / Start Menu shortcuts.
 - **One-Click Server Control:** Start, stop, and restart `BeamMP-Server.exe` with real-time process ID, port, and uptime tracking.
 - **Live Interactive Console:** Standard output and error streaming with auto-scroll, copy, clear, and interactive command sending.
 - **Console Command Presets:** Quick one-click execution for `status`, `list`, `say`, `kick`, `reloadmods`, `version`, and `help`.
@@ -45,7 +52,7 @@ A lightweight, native Windows desktop manager and configuration GUI for [BeamMP 
 
 ## Building from Source
 
-To build `BeamMP-GUI.exe` yourself:
+To build `BeamMP-GUI.exe` and `BeamMP-GUI-Installer.exe` yourself:
 
 1. Clone the repository:
    ```cmd
