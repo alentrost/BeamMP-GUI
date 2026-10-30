@@ -1,0 +1,21 @@
+# BeamMP Server binaries and server configs (DO NOT COMMIT)
+BeamMP-Server.exe
+ServerConfig.toml
+Server.log*
+*.log
+Resources/
+
+# Build artifacts & temp files
+bin/
+obj/
+AppSource/obj/
+AppSource/bin/
+*.pdb
+*.suo
+*.user
+
+# IDE & OS files
+.vs/
+.vscode/
+Thumbs.db
+Desktop.ini
