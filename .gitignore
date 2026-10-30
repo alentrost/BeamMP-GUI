@@ -5,7 +5,7 @@ Server.log*
 *.log
 Resources/
 
-# Build artifacts & temp files
+# Build artifacts & binaries
 bin/
 obj/
 AppSource/obj/
@@ -13,6 +13,7 @@ AppSource/bin/
 *.pdb
 *.suo
 *.user
+*.exe
 
 # IDE & OS files
 .vs/

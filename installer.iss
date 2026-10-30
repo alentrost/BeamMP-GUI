@@ -1,5 +1,5 @@
 #define MyAppName "BeamMP-GUI"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "2.0.0"
 #define MyAppPublisher "Alen Trošt"
 #define MyAppURL "https://github.com/alentrost/BeamMP-GUI"
 #define MyAppExeName "BeamMP-GUI.exe"
@@ -13,6 +13,8 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={code:GetDefaultServerDir}
+AppendDefaultDirName=no
+DirExistsWarning=no
 DisableProgramGroupPage=yes
 OutputDir=.
 OutputBaseFilename=BeamMP-GUI-Installer
@@ -65,4 +67,25 @@ begin
     Result := DocsPath
   else
     Result := DocsPath;
+end;
+
+function NextButtonClick(CurPageID: Integer): Boolean;
+var
+  SelectedDir: String;
+  ServerExe: String;
+begin
+  Result := True;
+  if CurPageID = wpSelectDir then
+  begin
+    SelectedDir := WizardDirValue;
+    ServerExe := AddBackslash(SelectedDir) + 'BeamMP-Server.exe';
+    if not FileExists(ServerExe) then
+    begin
+      MsgBox('BeamMP-Server.exe was not found in the selected folder:' + #13#10#13#10 +
+             SelectedDir + #13#10#13#10 +
+             'Please select the folder where BeamMP-Server.exe is located.',
+             mbCriticalError, MB_OK);
+      Result := False;
+    end;
+  end;
 end;

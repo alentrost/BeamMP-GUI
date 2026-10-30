@@ -21,13 +21,14 @@ A lightweight, native Windows desktop manager and configuration GUI for [BeamMP 
 
 ### Option 1: Installer (Recommended)
 1. Download **`BeamMP-GUI-Installer.exe`** from [Releases](https://github.com/alentrost/BeamMP-GUI/releases/latest).
-2. Run it, choose your BeamMP server folder, and select your preferred shortcut options (**Desktop** and/or **Start Menu**).
-3. Click **Install & Launch**.
+2. Run the installer and select your BeamMP server folder (where `BeamMP-Server.exe` is located).
+3. Select your preferred shortcut options (**Desktop** and/or **Start Menu**).
+4. Click **Install**.
 
 ### Option 2: Portable / Standalone
 1. Download **`BeamMP-GUI.exe`** from [Releases](https://github.com/alentrost/BeamMP-GUI/releases/latest).
 2. Drop `BeamMP-GUI.exe` directly into your BeamMP server folder (where `BeamMP-Server.exe` and `ServerConfig.toml` are located).
-3. Run `BeamMP-GUI.exe` (you can also click the `📌 Shortcuts` button in the header anytime to add Desktop or Start Menu shortcuts).
+3. Run `BeamMP-GUI.exe`.
 
 > **Note:** Requires Windows 10 or 11 (.NET Framework 4.8 is built-in). No external runtimes (Python, Node, etc.) required.
 
@@ -35,7 +36,7 @@ A lightweight, native Windows desktop manager and configuration GUI for [BeamMP 
 
 ## Features
 
-- **Built-in Installer & Setup Wizard:** Choose your server folder, install the app, and generate Desktop / Start Menu shortcuts.
+- **Standard Windows Installer:** Verifies your server directory and sets up Desktop and Start Menu shortcuts.
 - **One-Click Server Control:** Start, stop, and restart `BeamMP-Server.exe` with real-time process ID, port, and uptime tracking.
 - **Live Interactive Console:** Standard output and error streaming with auto-scroll, copy, clear, and interactive command sending.
 - **Console Command Presets:** Quick one-click execution for `status`, `list`, `say`, `kick`, `reloadmods`, `version`, and `help`.
@@ -61,5 +62,5 @@ To build `BeamMP-GUI.exe` and `BeamMP-GUI-Installer.exe` yourself:
    ```
 2. Run `build.bat` or build using MSBuild:
    ```cmd
-   "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe" "AppSource\BeamMP-GUI.csproj" /p:Configuration=Release
+   build.bat
    ```
