@@ -783,13 +783,6 @@ namespace BeamMPServerManager
             }
         }
 
-        private void OpenShortcutsSetup_Click(object sender, RoutedEventArgs e)
-        {
-            var setupWin = new BeamMP_GUI.SetupWindow(true);
-            setupWin.Owner = this;
-            setupWin.ShowDialog();
-        }
-
         // ================= WINDOW CLOSING =================
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
